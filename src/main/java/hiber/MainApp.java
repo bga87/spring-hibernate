@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 
 public class MainApp {
@@ -31,7 +30,7 @@ public class MainApp {
          System.out.println("First Name = " + user.getFirstName());
          System.out.println("Last Name = " + user.getLastName());
          System.out.println("Email = " + user.getEmail());
-         Optional.ofNullable(user.getCar()).ifPresent(car -> System.out.println("Car = " + car));
+         user.getCar().ifPresent(car -> System.out.println("Car = " + car));
          System.out.println();
       }
 

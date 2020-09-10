@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Optional;
 
 @Entity
 @Table(name = "users")
@@ -79,8 +80,8 @@ public class User {
       this.email = email;
    }
 
-   public Car getCar() {
-      return car;
+   public Optional<Car> getCar() {
+      return Optional.ofNullable(car);
    }
 
    public void setCar(Car car) {
