@@ -1,5 +1,8 @@
 package hiber.model;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +31,8 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne
+   @OneToOne(fetch = FetchType.LAZY)
+   @Cascade(CascadeType.SAVE_UPDATE)
    @JoinColumn(unique = true)
    private Car car;
 
