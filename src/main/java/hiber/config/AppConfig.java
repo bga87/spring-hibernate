@@ -44,6 +44,7 @@ public class AppConfig {
       Properties props=new Properties();
       props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+      //props.put("hibernate.enable_lazy_load_no_trans", env.getProperty("hibernate.enable_lazy_load_no_trans"));
 
       factoryBean.setHibernateProperties(props);
       factoryBean.setAnnotatedClasses(User.class, Car.class);
